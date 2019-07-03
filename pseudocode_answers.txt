@@ -22,35 +22,37 @@ END IF
 
 2. Create a function that prints out the numbers from 1 to 100.
 
-SET 1 as the starting number
-WHILE adding 1 to each number from 1
-PRINT that number out
+
+SET currentNumber to 1
+WHILE currentNumber is less than 101
+  PRINT currentNumber
+  INCREMENT currentNumber by 1
 END WHILE
-RETURN all the numbers until 100
 
 3. Create a function that searches for a specific entry in a phonebook.
 
-SET UP a phonebook  ARRAY with NAMES
-FOR sort through  array and 
-IF entry equals NAME
-RETURN  that name
-ELSE print NO ENTRY match  
-END IF
-END FOR
+FUNCTION findEntry (input NAME parameter)
+  SET phonebook to an ARRAY with names
+  FOR each entry in the phonebook
+    IF entry equals NAME parameter
+      RETURN that name  
+    END IF
+  END FOR
+  RETURN "No match found"
+END FUNCTION
+
 
 4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
 
-function findEntry(entry){
-var phonebook = ['Mads', 'Ella'];
-for (var i = 0; i < phonebook.length; i++){
+function findEntry(name){
+  var phonebook = ['Mads', 'Ella'];
+  for (var i = 0; i < phonebook.length; i++){
 
-if (phonebook[i] === entry) {
-return "We found your search: " + "  " + entry;
-} else {
- return "We don't have your search”;
-}
-}
-};
+   if (phonebook[i] === name) {
+    return "We found a match: " +  "  " + name;
+   } 
+  }
+    return ' no match found ';
+ }
 
-findEntry('Mads');
-
+findEntry('Ella');
