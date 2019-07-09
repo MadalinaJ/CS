@@ -1,0 +1,57 @@
+1. A line of people at an amusement park ride.
+
+The line is composed of members, represented as strings.
+There is a front to the line, as well as a back.
+When someone enters the line, place them at the end.
+People may leave the line whenever they see fit, and those behind them take their place.
+Given the above real-world information, use an array data structure to code the following solution.
+
+a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"].
+
+ var amusementParkLine= ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+amusementParkLine.push('Mary');
+
+
+c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+amusementParkLine.indexOf('Josh');
+
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+
+amusementParkLine.indexOf('Emily'); - will return (-1);
+
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+amusementParkLine.splice(1,0,'Melissa');
+
+f) If Patrick wants to leave the line, how would you delete him from the array?
+
+amusementParkLine.splice(4,1);
+
+2. Provide another real-world example that you can model using a data structure.
+
+Arranging books in a library; 
+
+3. How would your data structure allow developers to access and manipulate the data?
+
+var authors=['Anne Rice', 'Stephen King', 'Bram Stocker'];
+var books= ['Interview with the Vampire', 'Carrie', 'Dracula'];
+
+Find total books: books.length; => return 3;
+
+arrange in alphabetical order: authors.sort(); => ["Anne Rice", "Bram Stocker", "Stephen King"];
+
+Find a title: books.indexOf('Carrie'); (index 1)
+
+Move Carrie at the end of array and delete the first index of 'Carrie': books.push('Carrie')=> ['Interview with the Vampire', 'Carrie', 'Dracula', 'Carrie'];
+
+Delete the first indexOf Carrie- books.indexOf('Carrie'); (index 1);
+                               -books.lastIndexOf('Carie'); (index 3);
+                              - books.splice(1.1);
+    console.log(books);-> [Interview with the Vampire', 'Dracula', 'Carrie'];
+
+
+join 2 or more arrays with .concat(), etc;  
