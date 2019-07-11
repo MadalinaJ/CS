@@ -1,0 +1,132 @@
+EXERCISES
+For exercises requiring code, you are free to use the language of your choice.
+Provide all the code and written answers in a file named stacks_and_queues.txt:
+
+1. What is the main difference between a stack and a queue? 
+      The main differences between stack and queue are that stack uses LIFO (last in first out) method to access and add data elements whereas Queue uses FIFO (First in first out) method to access and add data elements.
+
+2. What are the similarities between stacks and queues?
+       Both are linear data structures;   both  have an input point and an exit point (store data and retrieve data);     
+
+3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why? 
+For both UNDO  and Redo I would use a stack structure- the first action that should appear is the last one that was done (LIFO): 
+
+- when we perform an Undo, we want to undo the MOST RECENT EDIT THAT HAS NOT BEEN UNDONE 
+-  same way, when we perform a Redo, we want to REDO THE MOST RECENT UNDO THAT HAS NOT BEEN REDONE. Again, we need LIFO access to the Undo operations.
+ - we also need to  use two stacks, one to keep the edit history, and one to keep the Undo history ( the history of Undo operations that can be redone).
+
+
+PROGRAMMING QUESTIONS
+
+You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
+
+1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB". 
+    a.    function reverse(element){
+                    return element.split('').reverse().join('');
+           }
+   b.  using the LIFO:
+
+    
+function reverse (element){
+  var pushedLetters= [];
+
+    for(i=0; i<element.length; i++){
+           pushedLetters.push(element[i]);
+      }
+        var reversedElement = '';
+         while (pushedLetters.length > 0) {
+             reversedElement +=pushedLetters.pop();
+  }
+   return reversedElement;
+}
+
+  console.log(reverse(‘Bloc!’)) ;
+
+
+2. Implement the pop method of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure. Since the internal list is not the same as defined in the checkpoint, it may help to rewrite the pseudocode first.
+A.  
+var shiftReturn =function (queue){
+    var firstToGo=[];        	 // here store the first element in stack that will leave
+    var lastToReturn=[];     // here store the last element from stack that will leave, then return it
+    for ( let i=0; i<queue.length; i++){ 
+        if( i!==queue.length -1){  // if it’s not the last element and the stack is not empty, keep deconstructing
+            firstToGo=queue.shift();   // remove first element from stack
+            queue.push(firstToGo);    // add the element at the end
+            console.log(queue);
+        } else {
+            lastToReturn=queue.shift();   // when condition it’s over and remove the element
+            console.log(queue);
+        }
+    } 
+      return lastToReturn;           // return the last element
+}
+
+shiftReturn([‘ana','ella’,’bob’]);
+  ["ella", "bob", "ana"]
+  ["bob", "ana", "ella"]
+  ["ana", "ella"]
+  "bob"
+
+B.  class Stack {
+    constructor(){
+     this.pop = function(queue){
+       var newQueue = [];
+       var itemToRemove = [];
+       
+       for(var i=0;i<queue.length; i++){
+         if(i==queue.length-1){
+           itemToRemove.push(queue[i]);
+         }else{
+           newQueue.push(queue[i]);
+         }
+       }
+       
+       return itemToRemove;   
+       
+     }
+   }
+}
+
+var stack = new Stack();
+console.log(stack.pop([1,2,3]);
+
+|   To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be removed and returned.
+
+1.	Implement the enqueue and dequeue methods defined in the checkpoint inside your own Queue class.
+
+ // Functions to be implemented 
+    // enqueue(item) 
+    // dequeue() 
+    // isEmpty() 
+
+  class Queue { 
+      constructor()  { 
+          this.items = []; 
+      } 
+        
+  enqueue(element) {     
+     
+       this.items.push(element); 
+   } 
+
+  dequeue() {  
+    if(this.isEmpty())
+       return "Empty array";
+      return this.items.shift();
+  }
+  
+   isEmpty(){
+    return this.items.length ==0;
+   }
+}
+
+var queue= new Queue();
+
+queue.enqueue('mara');
+queue.items;   ["mara"]
+
+queue.dequeue();
+"mara"
+
+queue.dequeue();
+"Empty array"
