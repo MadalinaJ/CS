@@ -95,56 +95,59 @@ Output: a -> c -> d
 
 A:
 
+
 function LinkedList () {
-  this.head = null;
-  this.size = 0;
+ this.size = 0;
+ this.head = null;
 }
 
-LinkedList.prototype = {
-  createNode: function(val) {
+LinkedList.prototype.createNode = function(val) {
     return {
       data: val,
       next: null
     }
-  },
+  }
 
 
-  append: function(val) {
-    var current,
+  LinkedList.prototype.append=function(val) {
     newNode = this.createNode(val);
     if (this.head == null) {
-      this.head = newNode
-    }
-    else {
+      this.head = newNode;
+    } else {
       current = this.head
       while(current.next != null) {
         current = current.next
       }
-      current.next = newNode
+      current.next = newNode;
     }
-    this.size++
-  },
+    this.size++;
+  
 
-removeDuplicate: function() {
-    current = this.head
-    while(current != null) {
-      if(!current.data) {
-        current.data = true
-      } else {
-        current = current.next
-        this.size--
-      }
+ LinkedList.prototype.removeDuplicate=function() {
+
+ z= this.head;
+    while( z != null) {
+     y= z;
+    while( y.next != null){
+      if( z.data == y.next.data) {
+            y.next = y.next.next;
+             this.size--;
+      }else {
+        y = y.next;
     } 
   }
+     z = z.next;
+}
+}
 }
 
+
 let newList = new LinkedList();
-newList.createNode('Citrus');
 newList.append('Lemons');
 newList.append('Grapefruit');
 newList.append('Grapefruit');
 newList.removeDuplicate();
-
+newList;
 
 3. Given an unsorted singly linked list, reverse it.
 Example
@@ -152,32 +155,56 @@ Input: a -> b -> c -> d
 Output: d -> c -> b -> a
 
 
-A: let list = {
-  value: 'Tesla',
-  next: {
-    value: 'Corvette',
-    next: {
-      value: 'Audi',
+A: 
+function LinkedList () {
+ this.size = 0;
+ this.head = null;
+}
+
+LinkedList.prototype.createNode = function(val) {
+    return {
+      data: val,
       next: null
     }
   }
-}
 
 
-function reverseList(list) {
-  let node = list
-  let previous = null
+  LinkedList.prototype.append=function(val) {
+    newNode = this.createNode(val);
+    if (this.head == null) {
+      this.head = newNode;
+    } else {
+      current = this.head
+      while(current.next != null) {
+        current = current.next
+      }
+      current.next = newNode;
+    }
+    this.size++;
+  
 
-  while(node != null) {
-    let nodeNext = node.next
-    node.next = previous
-    previous = node
-    node = nodeNext  
-  }
-  return previous
-}
+  LinkedList.prototype.reverse= function() {
+     var previousNode = null;
+     var thisNode = this.head;
+     var nextNode;
 
-reverseList(list);
+     while (thisNode) {
+
+      nextNode = thisNode.next;
+      thisNode.next = previousNode;
+      previousNode = thisNode;
+      thisNode = nextNode;
+    }
+    this.head = previousNode;
+   }
+ }
+
+ let linkedList= new LinkedList();
+ linkedList.append('Ema');
+ linkedList.append('Mads');
+ linkedList.reverse();
+ linkedList;
+
 
 
 
