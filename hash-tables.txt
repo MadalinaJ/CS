@@ -131,13 +131,13 @@ var HashTable = function(){
         storage[index].push([key, value]);
       }
     }
-  };
+  }
   
   this.findItem = function(key) {
     var index = hash(key, storageLimit);
     
     if(storage[index] === undefined) {
-      console.log("Not Found item");
+      console.log("Item not found");
     } else {
       for (var i = 0; i < storage[index].length; i ++) {
         if (storage[index][i][0] === key) {
@@ -145,65 +145,97 @@ var HashTable = function(){
         }
       }
     }
-  };
-  
-  this.showInventory = function(){
-    console.log(storage);
-  }
-  
+  } 
 }
 
 var storeItem = new HashTable();
 storeItem.add(18, 'black chair');
 storeItem.findItem(18);
 
+
 3.Create a hash table that allows digital copies of newspapers to be entered and searched by publisher and publication date
 
-class HashTable {
-	constructor() {
-		this.storage = [];
-		this.storageLimit = 30;
-	}
 
-	add(key, value) {
-		const obj = {};
-		obj[key] = value;
+function hash(key, size){
+	var hash = 0;
+  for(var i = 0; i < key.length; i++){
+    hash += key.charCodeAt(i);
+  }
 
-		if (!this.limitExceeded()) {
-			this.storage.push(obj);
-		} else {
-			return;
-		}
-	}
-
-	lookup(key) {
-		for (let i = 0; i < this.storage.length; i++) {
-			return this.storage[i][key];
-		}
-	}
-
-	lookupPublisher(value) {
-		for (let i = 0; i < this.storage.length; i++) {
-			const key = Object.keys(this.storage[i])[0];
-			if (this.storage[i][key] === value) {
-				return key;
-			}
-		}
-	}
-
-	limitExceeded() {
-		return this.storage.length >= this.storageLimit;
-	}
+  return hash % size;
 }
 
-var articleTable = new HashTable();
-articleTable.add('2019', 'Washington Post 06');
-articleTable.add('2018', 'Washington Post 03');
-articleTable.add('2017', 'Washington Post 04');
+function hashTableByPublisher(){
+  var storage = [];
+  var storageLimit = 30;
 
-articleTable.storage;
-articleTable.lookup('2018');
-articleTable.lookupPublisher('Washington Post 04');
+  this.add = function(publisher, date, article){
+    var index = hash(publisher, storageLimit);
+
+    if(storage[index] === undefined){
+      storage[index] = [ [publisher, date, article] ];
+    }
+  };
+
+  this.get = function(publisher){
+    var index = hash(publisher, storageLimit);
+
+    if(storage[index] === undefined) {
+        return "The publisher list is empty";
+    } else {
+        for(var i = 0; i < storage[index].length; i++) {
+          if(storage[index][i][0] === publisher) {
+              return "Publisher: " + storage[index][i][0] + ", date published: " + storage[index][i][1] + ", article: " + storage[index][i][2];
+          } else {
+            return "publisher not found";
+          }
+        }
+    } 
+  };
+}
+
+function hashTableByDate(){
+  var storage = [];
+  var storageLimit = 30;
+
+  this.add = function(publisher, date, article){
+    var index = hash(date, storageLimit);
+
+    if(storage[index] === undefined){
+     storage[index] = [ [publisher, date, article] ];
+    }
+  };
+
+  this.get = function(date){
+    var index = hash(date, storageLimit);
+
+    if(storage[index] === undefined) {
+        return "The newspaper list is empty";
+    } else {
+        for(var i = 0; i < storage[index].length; i++) {
+          if(storage[index][i][1] === date) {
+              return "Publisher: " + storage[index][i][0] + ", date published: " + storage[index][i][1] + ", article: " + storage[index][i][2];
+          } else {
+            return "date not found";
+          }
+        }
+    } 
+  }
+}
+
+var newspaper = new hashTableByPublisher();
+var newspaperDates = new hashTableByDate();
+
+newspaper.add('Washington Post', '1800', 'All dogs dream');
+newspaper.add('Times', '2017', 'Cats are puffy');
+
+newspaperDates.add('Washington Post', '1800', 'All dogs dream');
+newspaperDates.add('Times', '2017', 'Cats are puffy');
+
+console.log(newspaper.get('Washington Post'));
+
+console.log(newspaperDates.get('2017'));
+
 
 
 
