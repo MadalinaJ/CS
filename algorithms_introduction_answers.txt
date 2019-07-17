@@ -1,19 +1,21 @@
 1. Using proper pseudo-code, describe the following primitive algorithms:
 a.  MAKING COFFEE
 
-     FUNCTION makingCoffee()
-      PUT Coffee beans into the coffee compartiment
-         IF machine has no water
-         ADD water
+    FUNCTION makingCoffee()
+      PUT Coffee beans into the coffee compartment
+      IF machine has no water
+            ADD water
       ELSE 
-        PLACE a cup for coffee
-        PRESS start button
-        WAIT until the cup is filled with coffee
-        REMOVE cup from machine
-       IF you repeat the process 
-		LEAVE coffee maker ON
-   ELSE
-      TURN OFF the coffee machine     
+           PLACE a cup for coffee
+           PRESS start button
+           WAIT until the cup is filled with coffee
+           REMOVE cup from machine
+     END IF
+     IF you repeat the process 
+	   LEAVE coffee maker ON
+     ELSE
+          TURN OFF the coffee machine 
+     END IF    
      END FUNCTION
 
 b. WASHING DISHES:
@@ -22,14 +24,14 @@ b. WASHING DISHES:
 
         GET dishwasher soap 
         PUT  dishwasher soap into dishwasher
-        FOR EACH dirty dish on counter 
-          Scrape rest of food into garbage
+        FOR each dirty dish on counter 
+            IF dish has food
+               Scrape rest of food into garbage
+            END IF
+        ELSE  put dirty dishes into dishwasher
         END FOR 
-        WHILE there are dirty dishes on counter
-          Place dirty dishes in the dishwasher 
-        END WHILE
-          TURN on dishwasher     
-     END FUNCTION
+        TURN on dishwasher     
+        END FUNCTION
 
 c. A choice of your own:	
 
@@ -37,17 +39,22 @@ c. A choice of your own:
 	GET plate
 	GET  avocado
         IF avocado not cut
-          GET a knife and CUT avocado
+            GET a knife and cut avocado
         END IF
 
 	PLACE avocado on the plate
 	GET slices of bread
 	PUT bread in the toaster
 	START toaster
-	WHEN toaster is off remove bread from toaster
+	IF bread is toasted 
+ 	     remove bread from toaster
+        ELSE 
+            Leave the bread in the toaster until ready
+	END IF
+
 	PLACE bread on the plate
 	SPREAD avocado on bread with the knife
-  END FUNCTION
+        END FUNCTION
      
 
 2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
