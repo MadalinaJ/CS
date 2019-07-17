@@ -1,0 +1,63 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+a.  MAKING COFFEE
+
+     FUNCTION makingCoffee()
+      PUT Coffee beans into the coffee compartiment
+         IF machine has no water
+         ADD water
+      ELSE 
+        PLACE a cup for coffee
+        PRESS start button
+        WAIT until the cup is filled with coffee
+        REMOVE cup from machine
+       IF you repeat the process 
+		LEAVE coffee maker ON
+   ELSE
+      TURN OFF the coffee machine     
+     END FUNCTION
+
+b. WASHING DISHES:
+
+      FUNCTION washingDishesDishwasher()
+
+        GET dishwasher soap 
+        PUT  dishwasher soap into dishwasher
+        FOR EACH dirty dish on counter 
+          Scrape rest of food into garbage
+        END FOR 
+        WHILE there are dirty dishes on counter
+          Place dirty dishes in the dishwasher 
+        END WHILE
+          TURN on dishwasher     
+     END FUNCTION
+
+c. A choice of your own:	
+
+ FUNCTION makingAvocadoToast()
+	GET plate
+	GET  avocado
+        IF avocado not cut
+          GET a knife and CUT avocado
+        END IF
+
+	PLACE avocado on the plate
+	GET slices of bread
+	PUT bread in the toaster
+	START toaster
+	WHEN toaster is off remove bread from toaster
+	PLACE bread on the plate
+	SPREAD avocado on bread with the knife
+  END FUNCTION
+     
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+ 	- Netflix: their Recommendations System works putting together data collected from different places- takes into consideration viewing history; rated titles; how long you watch; the time of the day you're watching; 
+	- Tesla cars- energy battery algorithm Energy Usage Prediction:“The calculation is an estimate based on driving style (predicted speed, etc.) and environmental factors (elevation changes, weather, etc.).”"That’s the calculation that is going to predict your Tesla’s state of charge at a destination and suggest charging stops if needed."
+	- Uber dispatch algorithm runs their models on the driver's side based on 3 possible states: Stationary (Uber drivers leave their cars parked/waiting until they get a ping), Random Drive and Demand gravity (the drivers go towards the areas with reliable high demand) 
+
+	- Facebook  - the algorithm collects data => what the user is interested in (browsing, comments, likes, sharing, etc) => next it tailors specific marketing toward that person based on their interests and hobbies.
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+ - An efficient algorithm will minimize resource usage, will value speed and accuracy above everything ; also, it will be easy to understand;
+
