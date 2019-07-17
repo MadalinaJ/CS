@@ -1,0 +1,94 @@
+1. What is time complexity and what is its relation to algorithms?
+
+  Time complexity estimates the time that takes to execute a program and it is usually expressed as a function. 
+2. What is runtime?
+   Runtime is synonymous with time complexity; it is the physical time duration of an algorithm;
+
+3. How is the runtime of an algorithm calculated?
+  The runtime will get the total of instructions the algorithm execute as a function of the size of its input, then simplify the expression to the largest term and drop any constants
+	
+4. Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list. 
+  
+        1. Constant Growth : O(1)
+        2. Logarithmic Growth: O(log n)
+        3. Linear Growth: O(n)
+        4. Log-Linear Growth:O(n log n)
+        5. Quadratic Growth : O(n^2)
+        6. Exponential Growth : O(2^n)
+        7. Factorial: O(n!)(3! = 3*2*1 => a long running time!)
+
+5. Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+
+- Linear Growth: O(n) -  
+
+A real life situation would be if you were looking for a DVD in a personal collection. 
+You want your program to find any given movie. 
+You could tell the program to start checking the movie DVDs one by one from the left to right. 
+If you wanted 'The Fifth Element' it would only take 3 actions (or tries) because it’s the third DVD. 
+Important- Big O tells us the worst-case scenario. 
+What DVD would cause the algorithm to take the most possible actions? 
+Let's say 'John Carter' DVD is the 10th — so the algorithm would have to run all 10 times. 
+Given 10 DVDs, it took the algorithm 10 actions / tries to find the DVD -in the worst case scenario.
+
+-if we ran this algorithm on 200 dvd's, the worst case would take all 200 tries. 
+So O(N) tells us that given N data, it will take an algorithm N actions / tries to accomplish a task.
+
+
+6. Determine the time complexity of the following snippet of code. It is commonly known as a linear search.
+   
+   FUNCTION linearSearch(array, target)
+    FOR each number in the array (n)
+    IF number = target THEN (1)
+        RETURN true (1)
+    END IF
+    END FOR
+    RETURN false
+    END FUNCTION
+
+ n + 1 + 1 = O(n)
+
+
+7. Determine the time complexity of the following snippet of code.
+
+FUNCTION foo(array)
+ FOR each number in the array
+   FOR each number in the array
+     print "Hello"
+   END FOR
+ END FOR
+END FUNCTION
+
+ n * n + 1 = n^2 + 1 = O(n^2)
+
+
+8. Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
+
+FUNCTION fibonacci(number)
+ IF number < 1 THEN
+   ERROR
+ ELSE IF number = 1 or 2 THEN
+   RETURN 1
+ ELSE
+   CALL fibonacci WITH number - 2 RETURNING twoBack
+   CALL fibonacci WITH number - 1 RETURNING oneBack
+   RETURN twoBack + oneBack
+ END IF
+END FUNCTION
+
+ O(2^n) Exponential growth rate would be the time complexity.
+
+9. Out of the code snippets you just saw, which is the most time efficient?
+
+the most efficient :
+
+FUNCTION linearSearch(array, target)
+ FOR each number in the array
+   IF number = target THEN
+     RETURN true
+   END IF
+ END FOR
+ RETURN false
+END FUNCTION
+
+
+It uses Linear Growth:  O(n)
