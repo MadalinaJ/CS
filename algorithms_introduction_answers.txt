@@ -21,7 +21,6 @@ a.  MAKING COFFEE
 b. WASHING DISHES:
 
       FUNCTION washingDishesDishwasher()
-
         GET dishwasher soap 
         PUT  dishwasher soap into dishwasher
         FOR each dirty dish on counter 
@@ -41,29 +40,26 @@ c. A choice of your own:
         IF avocado not cut
             GET a knife and cut avocado
         END IF
-
-	PLACE avocado on the plate
-	GET slices of bread
-	PUT bread in the toaster
-	START toaster
+        PLACE avocado on the plate
+        GET slices of bread
+        PUT bread in the toaster
+        START toaster
 	IF bread is toasted 
  	     remove bread from toaster
         ELSE 
-            Leave the bread in the toaster until ready
-	END IF
-
-	PLACE bread on the plate
-	SPREAD avocado on bread with the knife
+        Leave the bread in the toaster until ready
+        END IF
+        PLACE bread on the plate
+        SPREAD avocado on bread with the knife
         END FUNCTION
      
-
 2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
 
- 	- Netflix: their Recommendations System works putting together data collected from different places- takes into consideration viewing history; rated titles; how long you watch; the time of the day you're watching; 
-	- Tesla cars- energy battery algorithm Energy Usage Prediction:“The calculation is an estimate based on driving style (predicted speed, etc.) and environmental factors (elevation changes, weather, etc.).”"That’s the calculation that is going to predict your Tesla’s state of charge at a destination and suggest charging stops if needed."
-	- Uber dispatch algorithm runs their models on the driver's side based on 3 possible states: Stationary (Uber drivers leave their cars parked/waiting until they get a ping), Random Drive and Demand gravity (the drivers go towards the areas with reliable high demand) 
+ - Netflix: their Recommendations System works putting together data collected from different places- takes into consideration viewing history; rated titles; how long you watch; the time of the day you're watching; 
+- Tesla cars- energy battery algorithm Energy Usage Prediction:“The calculation is an estimate based on driving style (predicted speed, etc.) and environmental factors (elevation changes, weather, etc.).”"That’s the calculation that is going to predict your Tesla’s state of charge at a destination and suggest charging stops if needed."
+- Uber dispatch algorithm runs their models on the driver's side based on 3 possible states: Stationary (Uber drivers leave their cars parked/waiting until they get a ping), Random Drive and Demand gravity (the drivers go towards the areas with reliable high demand) 
 
-	- Facebook  - the algorithm collects data => what the user is interested in (browsing, comments, likes, sharing, etc) => next it tailors specific marketing toward that person based on their interests and hobbies.
+- Facebook  - the algorithm collects data => what the user is interested in (browsing, comments, likes, sharing, etc) => next it tailors specific marketing toward that person based on their interests and hobbies.
 
 3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
  - An efficient algorithm will minimize resource usage, will value speed and accuracy above everything ; also, it will be easy to understand;

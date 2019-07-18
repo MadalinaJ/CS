@@ -1,10 +1,12 @@
 1. What is time complexity and what is its relation to algorithms?
 
   Time complexity estimates the time that takes to execute a program and it is usually expressed as a function. 
+
 2. What is runtime?
    Runtime is synonymous with time complexity; it is the physical time duration of an algorithm;
 
 3. How is the runtime of an algorithm calculated?
+
   The runtime will get the total of instructions the algorithm execute as a function of the size of its input, then simplify the expression to the largest term and drop any constants
 	
 4. Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list. 
@@ -48,6 +50,8 @@ So O(N) tells us that given N data, it will take an algorithm N actions / tries 
  n + 1 + 1 = O(n)
 
 
+
+
 7. Determine the time complexity of the following snippet of code.
 
 FUNCTION foo(array)
@@ -59,7 +63,6 @@ FUNCTION foo(array)
 END FUNCTION
 
  n * n + 1 = n^2 + 1 = O(n^2)
-
 
 8. Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
 
@@ -88,7 +91,7 @@ FUNCTION linearSearch(array, target)
    END IF
  END FOR
  RETURN false
-END FUNCTION
+END FUNCTION.           It uses Linear Growth:  O(n)
 
 
-It uses Linear Growth:  O(n)
+
