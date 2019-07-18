@@ -1,0 +1,86 @@
+1. What is a real-life scenario that uses linear search?
+ - O(n)-Linear Growth
+ - search for a name starting with 'A' in a phonebook - you start at the beginning reading every name until you find what you’re looking for- it looks down a list, one item at a time, without jumping.; you can use linear search on any unsorted list; 
+
+2. What is a real-life scenario that uses binary search?
+ - this search is applied on sorted lists; 
+ - complexity O(log n);
+
+Search a company name starting with 'R' in an index book. 
+ - you need to open the index book;
+ - the letter ‘R’ is somewhere in the middle of the index book/alphabet, so you split the book more or less in half and check what letter are you at. Let's say you open at letter 'M';
+ - you make an intuitive decision to only continue searching to the right side of the book now;
+ - you open again the book more to the right side;
+ - this time you got closer- letter 'P';
+ - probably with one more try, you would open the book at 'R'.
+
+
+3. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+ - 7 - we start with A
+
+4. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+ - It would take 3 because we start with D 
+
+5. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+ - I would use the linear search because we can only use a binary search on a sorted list.
+
+6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+ - I would use the binary search since the collection is sorted- it would be faster - from the beginning you eliminate half of the items that you don't need and proceed with the search. 
+
+PROGRAMMING QUESTION:
+
+1.  You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+ Binary Search: 
+
+function dictionarySearch(array, word){ 
+  
+    let start = 0;
+    let end = array.length - 1; 
+
+    while (start <= end){ 
+          
+        let mid = Math.floor((start + end) / 2); 
+            
+        if (array[mid] === word){
+          
+            return 'Found: ' + word; 
+        } else if (array[mid] < word){  
+          
+            start = mid + 1; 
+        } else{
+          
+            end = mid - 1; 
+       }
+    } 
+   
+    return 'The word is not in the dictionary'; 
+} 
+
+
+var dictionary = ['Abroad','academic', 'agent', 'Albatross', 'always','apartment'];
+
+console.log(dictionarySearch(dictionary, 'albatross'));
+console.log(dictionarySearch(dictionary, 'Albatross'));
+
+2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+Linear Search:
+ 
+function getFish(array, fish){
+  
+  for(let i = 0; i < array.length; i++){
+   
+    if (array[i] === fish){
+    
+      return "Here's your fish!";
+    }
+  }
+  return "Oops! Your fish is not here";
+}
+
+var array = ['red fish', 'black fish', 'grey fish', 
+		 'white-spotted goldfish', 'other fish'];
+
+console.log(getFish(array, 'white-spotted goldfish'));
+console.log(getFish(array, 'pink fish'));
