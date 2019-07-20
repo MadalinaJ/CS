@@ -27,7 +27,7 @@ Search a company name starting with 'R' in an index book.
 6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
  - I would use the binary search since the collection is sorted- it would be faster - from the beginning you eliminate half of the items that you don't need and proceed with the search. 
 
-PROGRAMMING QUESTION:
+
 
 1.  You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
 
@@ -83,4 +83,3 @@ var array = ['red fish', 'black fish', 'grey fish',
 		 'white-spotted goldfish', 'other fish'];
 
 console.log(getFish(array, 'white-spotted goldfish'));
-console.log(getFish(array, 'pink fish'));

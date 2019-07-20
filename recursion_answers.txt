@@ -27,6 +27,7 @@ solution is much better suited to handle this type of problem especially with la
     - Maximum and factorial are variable based on the parameter; the iterative version is much cleaner than the recursive version.
     Factorials-  recursion looks simpler when calculating factorials .
 
+
 5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
 
    function countItems(array){

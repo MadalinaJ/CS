@@ -1,0 +1,47 @@
+
+
+1.Implement a solution for bubble sort.
+
+   const bubbleSort = arr => {
+	  let swapped;
+	  do {
+	    swapped = false;
+	    for (let i = 0; i < arr.length; i++) {
+	      if (arr[i] > arr[i + 1]) {
+	        let tmp = arr[i];
+ 	       arr[i] = arr[i + 1];
+ 	       arr[i + 1] = tmp;
+	        swapped = true;
+ 	     }
+	    }
+	  } while (swapped);
+	  return arr;   
+   };
+
+   var array = [3,12,1,45,34];
+
+   console.log(bubbleSort(array));
+
+2. Write pseudocode for quicksort.
+
+FUNCTION QUICKSORT (array, left, right)
+  SET PIVOT
+  If elements are less than PIVOT
+    SET to LEFT
+  Else
+    SET to RIGHT
+  Call QUICKSORT on LEFT and RIGHT
+    RETURN array
+
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+Merge and Quick sort algorithms break a large input into smaller sub-collections and sorts those sub-collections; this type of sorting is more efficient and faster- you don't have to iterate through the entire collection one by one. 
+
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+
+With this algorithm you partition the whole array into small buckets; put numbers in the related bucket and then sort each bucket using another algorithm or using bucket sort. The ideal input would be an input that can be evenly distributed between the buckets.
+
+
+
